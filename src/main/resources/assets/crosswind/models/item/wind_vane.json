@@ -5,7 +5,7 @@
   "textures": {
     "p0_0": "create:block/andesite_casing",
     "p0_particle": "create:block/sail/canvas_white",
-    "p0_pole": "crosswind:block/pole_none",
+    "p0_pole": "create:block/andesite_casing",
     "p1_0": "create:block/andesite_casing",
     "p1_1": "create:block/sail/canvas_white",
     "p1_particle": "create:block/sail/canvas_white",

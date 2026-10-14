@@ -1,11 +1,11 @@
 {
-  "__comment": "wind_vane_base 的静态部分（连接状态 below）。立柱 UV 保持 0..16 的 1:1 映射，连接差异由贴图 pole_* 的像素行复制承担。",
+  "__comment": "wind_vane_base 的静态部分（连接状态 below）。立柱贴图取自 create:block/andesite_casing_connected 里「下方连通」那一格（8×8 图集第一行、从左数第 3 格），UV 按该格重算。",
   "parent": "block/block",
   "ambientocclusion": false,
   "textures": {
     "0": "create:block/andesite_casing",
     "particle": "create:block/sail/canvas_white",
-    "pole": "crosswind:block/pole_below"
+    "pole": "create:block/andesite_casing_connected"
   },
   "elements": [
     {
@@ -110,55 +110,55 @@
       "faces": {
         "north": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            16
+            4.25,
+            2
           ],
           "texture": "#pole"
         },
         "east": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            16
+            4.25,
+            2
           ],
           "texture": "#pole"
         },
         "south": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            16
+            4.25,
+            2
           ],
           "texture": "#pole"
         },
         "west": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            16
+            4.25,
+            2
           ],
           "texture": "#pole"
         },
         "up": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            2
+            4.25,
+            0.25
           ],
           "texture": "#pole"
         },
         "down": {
           "uv": [
+            4,
             0,
-            0,
-            2,
-            2
+            4.25,
+            0.25
           ],
           "texture": "#pole"
         }

@@ -1,10 +1,10 @@
 {
-  "__comment": "装饰立柱（连接状态 above）。来自用户 rod.json，几何与 UV 原样保留。",
+  "__comment": "装饰立柱（连接状态 above）。几何来自用户 rod.json；立柱贴图取自 create:block/andesite_casing_connected 里「上方连通」那一格（8×8 图集第一行、从左数第 2 格）。",
   "parent": "block/block",
   "ambientocclusion": false,
   "textures": {
-    "pole": "crosswind:block/pole_above",
-    "particle": "crosswind:block/pole_above"
+    "pole": "create:block/andesite_casing_connected",
+    "particle": "create:block/andesite_casing"
   },
   "elements": [
     {
@@ -31,55 +31,55 @@
       "faces": {
         "north": {
           "uv": [
-            0,
-            0,
             2,
-            16
+            0,
+            2.25,
+            2
           ],
           "texture": "#pole"
         },
         "east": {
           "uv": [
-            0,
-            0,
             2,
-            16
+            0,
+            2.25,
+            2
           ],
           "texture": "#pole"
         },
         "south": {
           "uv": [
-            0,
-            0,
             2,
-            16
+            0,
+            2.25,
+            2
           ],
           "texture": "#pole"
         },
         "west": {
           "uv": [
-            0,
-            0,
             2,
-            16
+            0,
+            2.25,
+            2
           ],
           "texture": "#pole"
         },
         "up": {
           "uv": [
-            0,
-            0,
             2,
-            2
+            0,
+            2.25,
+            0.25
           ],
           "texture": "#pole"
         },
         "down": {
           "uv": [
-            0,
-            0,
             2,
-            2
+            0,
+            2.25,
+            0.25
           ],
           "texture": "#pole"
         }

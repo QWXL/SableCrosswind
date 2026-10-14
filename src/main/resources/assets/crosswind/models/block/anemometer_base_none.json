@@ -1,11 +1,11 @@
 {
-  "__comment": "anemometer_base 的静态部分（连接状态 none）。立柱 UV 保持 0..16 的 1:1 映射，连接差异由贴图 pole_* 的像素行复制承担。",
+  "__comment": "anemometer_base 的静态部分（连接状态 none）。立柱贴图取自 create:block/andesite_casing，UV 保持 0..16 的 1:1 映射。",
   "parent": "block/block",
   "ambientocclusion": false,
   "textures": {
     "0": "create:block/andesite_casing",
     "particle": "create:block/sail/canvas_white",
-    "pole": "crosswind:block/pole_none"
+    "pole": "create:block/andesite_casing"
   },
   "elements": [
     {

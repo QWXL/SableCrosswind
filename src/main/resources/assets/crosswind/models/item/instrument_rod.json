@@ -3,9 +3,9 @@
   "parent": "block/block",
   "ambientocclusion": false,
   "textures": {
-    "p0_pole": "crosswind:block/pole_none",
-    "p0_particle": "crosswind:block/pole_none",
-    "particle": "crosswind:block/pole_none"
+    "p0_pole": "create:block/andesite_casing",
+    "p0_particle": "create:block/andesite_casing",
+    "particle": "create:block/andesite_casing"
   },
   "display": {
     "thirdperson_righthand": {

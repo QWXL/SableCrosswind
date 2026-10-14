@@ -3,8 +3,8 @@
   "parent": "block/block",
   "ambientocclusion": false,
   "textures": {
-    "pole": "crosswind:block/pole_none",
-    "particle": "crosswind:block/pole_none"
+    "pole": "create:block/andesite_casing",
+    "particle": "create:block/andesite_casing"
   },
   "elements": [
     {
