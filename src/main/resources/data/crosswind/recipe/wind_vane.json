@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "create:shaft"
+    },
+    "W": {
+      "tag": "crosswind:sails"
+    },
+    "R": {
+      "item": "crosswind:instrument_rod"
+    }
+  },
+  "pattern": [
+    "SSW",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crosswind:wind_vane"
+  }
+}

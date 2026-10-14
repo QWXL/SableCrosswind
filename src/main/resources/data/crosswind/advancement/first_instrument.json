@@ -1,0 +1,57 @@
+{
+  "criteria": {
+    "anemometer": {
+      "conditions": {
+        "location": [
+          {
+            "block": "crosswind:anemometer",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "weather_station": {
+      "conditions": {
+        "location": [
+          {
+            "block": "crosswind:weather_station",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "wind_vane": {
+      "conditions": {
+        "location": [
+          {
+            "block": "crosswind:wind_vane",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancements.crosswind.first_instrument.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crosswind:wind_vane"
+    },
+    "title": {
+      "translate": "advancements.crosswind.first_instrument.title"
+    }
+  },
+  "requirements": [
+    [
+      "wind_vane",
+      "anemometer",
+      "weather_station"
+    ]
+  ]
+}

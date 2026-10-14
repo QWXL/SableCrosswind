@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "axis=y,pole_below=false": {
+      "model": "crosswind:block/wind_vane_base_none"
+    },
+    "axis=y,pole_below=true": {
+      "model": "crosswind:block/wind_vane_base_below"
+    },
+    "axis=x,pole_below=false": {
+      "model": "crosswind:block/wind_vane_base_none"
+    },
+    "axis=x,pole_below=true": {
+      "model": "crosswind:block/wind_vane_base_below"
+    },
+    "axis=z,pole_below=false": {
+      "model": "crosswind:block/wind_vane_base_none"
+    },
+    "axis=z,pole_below=true": {
+      "model": "crosswind:block/wind_vane_base_below"
+    }
+  }
+}

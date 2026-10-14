@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "axis=y,pole_above=false,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_none"
+    },
+    "axis=y,pole_above=false,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_below"
+    },
+    "axis=y,pole_above=true,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_above"
+    },
+    "axis=y,pole_above=true,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_both"
+    },
+    "axis=x,pole_above=false,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_none"
+    },
+    "axis=x,pole_above=false,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_below"
+    },
+    "axis=x,pole_above=true,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_above"
+    },
+    "axis=x,pole_above=true,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_both"
+    },
+    "axis=z,pole_above=false,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_none"
+    },
+    "axis=z,pole_above=false,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_below"
+    },
+    "axis=z,pole_above=true,pole_below=false": {
+      "model": "crosswind:block/instrument_rod_above"
+    },
+    "axis=z,pole_above=true,pole_below=true": {
+      "model": "crosswind:block/instrument_rod_both"
+    }
+  }
+}

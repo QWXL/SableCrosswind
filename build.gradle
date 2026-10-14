@@ -1,0 +1,219 @@
+plugins {
+    id 'idea'
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.91'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenLocal()
+
+    maven {
+        name = 'CreateMod'
+        url = 'https://maven.createmod.net'
+    }
+    maven {
+        name = 'RyanHCode'
+        url = 'https://maven.ryanhcode.dev/releases'
+    }
+    maven {
+        name = 'BlameJared'
+        url = 'https://maven.blamejared.com'
+    }
+    maven {
+        name = 'devOS'
+        url = 'https://mvn.devos.one/snapshots'
+    }
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+            gameDirectory = project.file(project.run_client_dir)
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        server {
+            server()
+            gameDirectory = project.file(project.run_server_dir)
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        gameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = project.file('runs/gametest')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        data {
+            data()
+            gameDirectory = project.file(project.run_data_dir)
+            programArguments.addAll '--mod', project.mod_id, '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+def optionalIntegrationExcludes = { org.gradle.api.artifacts.ModuleDependency dep ->
+    dep.exclude group: 'top.theillusivec4.curios'
+    dep.exclude group: 'mezz.jei'
+    dep.exclude group: 'cc.tweaked'
+    dep.exclude group: 'maven.modrinth'
+    dep.exclude group: 'curse.maven'
+}
+
+dependencies {
+    implementation "dev.ryanhcode.sable:sable-neoforge-1.21.1:${sable_version}"
+    implementation "dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:${sable_companion_version}"
+    implementation "foundry.veil:veil-neoforge-1.21.1:${veil_version}"
+
+    implementation("com.simibubi.create:create-1.21.1:${create_version}") {
+        exclude group: 'mezz.jei'
+        exclude group: 'maven.modrinth'
+        exclude group: 'curse.maven'
+        exclude group: 'dev.ftb.mods'
+        exclude group: 'info.journeymap'
+        exclude group: 'cc.tweaked'
+        exclude group: 'top.theillusivec4.curios'
+        exclude group: 'dev.engine-room.vanillin'
+        exclude group: 'dev.architectury'
+    }
+
+    implementation("dev.simulated_team.simulated:simulated-neoforge-1.21.1:${simulated_version}") {
+        optionalIntegrationExcludes(delegate)
+    }
+    implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-1.21.1:${aeronautics_version}") {
+        optionalIntegrationExcludes(delegate)
+    }
+
+    localRuntime "com.tterrag.registrate:Registrate:${registrate_version}"
+    implementation "net.createmod.ponder:ponder-neoforge:${ponder_version}"
+    implementation "dev.engine-room.flywheel:flywheel-neoforge-1.21.1:${flywheel_version}"
+}
+
+dependencies {
+    constraints {
+        implementation("dev.ryanhcode.sable:sable-neoforge-1.21.1:${sable_version}")
+        implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}")
+        implementation("dev.engine-room.flywheel:flywheel-neoforge-1.21.1:${flywheel_version}")
+    }
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:5.11.4"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+    testImplementation "org.joml:joml:1.10.5"
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+        showStandardStreams = true
+    }
+}
+
+var generateModMetadata = tasks.register('generateModMetadata') {
+    var template = file('src/main/templates/META-INF/neoforge.mods.toml')
+    var output = layout.buildDirectory.file('generated/sources/modMetadata/META-INF/neoforge.mods.toml')
+
+    var replaceProperties = [
+            minecraft_version        : minecraft_version,
+            minecraft_version_range  : minecraft_version_range,
+            neo_version              : neo_version,
+            neo_version_range        : neo_version_range,
+            loader_version_range     : loader_version_range,
+            mod_id                   : mod_id,
+            mod_name                 : mod_name,
+            mod_license              : mod_license,
+            mod_version              : mod_version,
+            mod_authors              : mod_authors,
+            mod_description          : mod_description,
+            create_version_range     : create_version_range,
+            sable_version_range      : sable_version_range,
+            simulated_version_range  : simulated_version_range,
+            aeronautics_version_range: aeronautics_version_range,
+            ponder_version_range     : ponder_version_range,
+    ].collectEntries { k, v -> [(k): String.valueOf(v)] }
+
+    inputs.file(template)
+    inputs.properties(replaceProperties)
+    outputs.file(output)
+
+    doLast {
+        var UTF8 = java.nio.charset.StandardCharsets.UTF_8
+
+        var text = new String(template.bytes, UTF8)
+        replaceProperties.each { key, value -> text = text.replace('${' + key + '}', value) }
+
+        var target = output.get().asFile
+        target.parentFile.mkdirs()
+        target.bytes = text.getBytes(UTF8)
+    }
+}
+sourceSets.main.resources.srcDir(layout.buildDirectory.dir('generated/sources/modMetadata'))
+neoForge.ideSyncTask generateModMetadata
+
+tasks.named('processResources') {
+    dependsOn(generateModMetadata)
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/repo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = false
+    }
+}

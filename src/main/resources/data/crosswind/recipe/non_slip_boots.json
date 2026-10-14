@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "T": {
+      "tag": "crosswind:terracottas"
+    },
+    "B": {
+      "item": "minecraft:leather_boots"
+    }
+  },
+  "pattern": [
+    "T T",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crosswind:non_slip_boots"
+  }
+}

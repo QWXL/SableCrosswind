@@ -1,0 +1,89 @@
+{
+  "__comment": "装饰立柱（连接状态 both）。来自用户 rod.json，几何与 UV 原样保留。",
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "pole": "crosswind:block/pole_both",
+    "particle": "crosswind:block/pole_both"
+  },
+  "elements": [
+    {
+      "name": "rod",
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          0,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#pole"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#pole"
+        }
+      }
+    }
+  ]
+}

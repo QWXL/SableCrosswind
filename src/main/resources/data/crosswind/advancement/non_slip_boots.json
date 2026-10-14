@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "wear": {
+      "trigger": "crosswind:equip_boots"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.crosswind.non_slip_boots.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crosswind:non_slip_boots"
+    },
+    "title": {
+      "translate": "advancements.crosswind.non_slip_boots.title"
+    }
+  },
+  "parent": "crosswind:first_instrument",
+  "requirements": [
+    [
+      "wear"
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "tag": "crosswind:sails"
+    },
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "R": {
+      "item": "crosswind:instrument_rod"
+    }
+  },
+  "pattern": [
+    "WAW",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crosswind:anemometer"
+  }
+}

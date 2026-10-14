@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "V": {
+      "item": "crosswind:wind_vane"
+    },
+    "M": {
+      "item": "create:precision_mechanism"
+    },
+    "A": {
+      "item": "crosswind:anemometer"
+    },
+    "R": {
+      "item": "crosswind:instrument_rod"
+    }
+  },
+  "pattern": [
+    "VMA",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crosswind:weather_station"
+  }
+}

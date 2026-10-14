@@ -1,0 +1,869 @@
+{
+  "__comment": "wind_vane 的物品模型：静态部分 + 可旋转部件（默认 0° 朝向）。★ 这里【不能】用 BlockEntityWithoutLevelRenderer —— 那会跳过物品模型管线，display 变换不会生效。用普通静态模型最省事。",
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "p0_0": "create:block/andesite_casing",
+    "p0_particle": "create:block/sail/canvas_white",
+    "p0_pole": "crosswind:block/pole_none",
+    "p1_0": "create:block/andesite_casing",
+    "p1_1": "create:block/sail/canvas_white",
+    "p1_particle": "create:block/sail/canvas_white",
+    "particle": "create:block/sail/canvas_white"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "elements": [
+    {
+      "name": "rod",
+      "from": [
+        7,
+        11,
+        7
+      ],
+      "to": [
+        9,
+        13,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          12,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_0"
+        }
+      }
+    },
+    {
+      "name": "rod",
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        9,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          0,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#p0_pole"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#p0_pole"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#p0_pole"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#p0_pole"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_pole"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#p0_pole"
+        }
+      }
+    },
+    {
+      "name": "arrow",
+      "from": [
+        7.5,
+        9.2,
+        0
+      ],
+      "to": [
+        8.5,
+        10.7,
+        12
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7.5,
+          0.7,
+          15
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            7,
+            1,
+            9
+          ],
+          "texture": "#p1_0"
+        },
+        "east": {
+          "uv": [
+            14,
+            0,
+            16,
+            12
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "south": {
+          "uv": [
+            14,
+            2,
+            15.5,
+            3
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "west": {
+          "uv": [
+            14,
+            0,
+            16,
+            12
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            1,
+            12
+          ],
+          "texture": "#p1_0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            1,
+            12
+          ],
+          "texture": "#p1_0"
+        }
+      }
+    },
+    {
+      "name": "arrow",
+      "from": [
+        7.5,
+        8.2,
+        1
+      ],
+      "to": [
+        8.5,
+        9.2,
+        2
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7.5,
+          -0.8,
+          2
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "east": {
+          "uv": [
+            0,
+            6,
+            1,
+            7
+          ],
+          "rotation": 270,
+          "texture": "#p1_0"
+        },
+        "south": {
+          "uv": [
+            14,
+            6,
+            15,
+            7
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "west": {
+          "uv": [
+            0,
+            10,
+            1,
+            11
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "up": {
+          "uv": [
+            14,
+            10,
+            15,
+            11
+          ],
+          "texture": "#p1_0"
+        },
+        "down": {
+          "uv": [
+            14,
+            2,
+            15,
+            3
+          ],
+          "texture": "#p1_0"
+        }
+      }
+    },
+    {
+      "name": "arrow",
+      "from": [
+        7.5,
+        10.7,
+        1
+      ],
+      "to": [
+        8.5,
+        11.7,
+        2
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7.5,
+          1.7,
+          2
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            12,
+            1,
+            13
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "east": {
+          "uv": [
+            0,
+            6,
+            1,
+            7
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "west": {
+          "uv": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "up": {
+          "uv": [
+            0,
+            10,
+            1,
+            11
+          ],
+          "texture": "#p1_0"
+        },
+        "down": {
+          "uv": [
+            14,
+            6,
+            15,
+            7
+          ],
+          "texture": "#p1_0"
+        }
+      }
+    },
+    {
+      "from": [
+        6.2,
+        8.9,
+        6.2
+      ],
+      "to": [
+        9.8,
+        11,
+        9.8
+      ],
+      "rotation": {
+        "angle": -45,
+        "axis": "y",
+        "origin": [
+          8,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            2,
+            4,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "east": {
+          "uv": [
+            12,
+            10,
+            14,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "south": {
+          "uv": [
+            12,
+            2,
+            14,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "west": {
+          "uv": [
+            2,
+            10,
+            4,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#p1_0"
+        },
+        "up": {
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ],
+          "texture": "#p1_0"
+        },
+        "down": {
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ],
+          "texture": "#p1_0"
+        }
+      }
+    },
+    {
+      "name": "canva",
+      "from": [
+        7.5,
+        8.2,
+        12.8
+      ],
+      "to": [
+        8.5,
+        9.2,
+        16
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "x",
+        "origin": [
+          8,
+          8.7,
+          13.1
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            13,
+            2,
+            14
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "south": {
+          "uv": [
+            1,
+            3,
+            2,
+            4
+          ],
+          "texture": "#p1_1"
+        },
+        "west": {
+          "uv": [
+            15,
+            2,
+            16,
+            6
+          ],
+          "rotation": 270,
+          "texture": "#p1_1"
+        },
+        "up": {
+          "uv": [
+            2,
+            1,
+            6,
+            2
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "down": {
+          "uv": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        }
+      }
+    },
+    {
+      "name": "canva",
+      "from": [
+        7.5,
+        9.2,
+        12
+      ],
+      "to": [
+        8.5,
+        10.7,
+        15.2
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          9.7,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            13,
+            2,
+            14.5
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "south": {
+          "uv": [
+            0,
+            10,
+            2,
+            11
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "west": {
+          "uv": [
+            14,
+            2,
+            16,
+            6
+          ],
+          "rotation": 270,
+          "texture": "#p1_1"
+        },
+        "up": {
+          "uv": [
+            2,
+            2,
+            6,
+            3
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "down": {
+          "uv": [
+            0,
+            3,
+            1,
+            7
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        }
+      }
+    },
+    {
+      "name": "canva",
+      "from": [
+        7.5,
+        10.7,
+        12.8
+      ],
+      "to": [
+        8.5,
+        11.7,
+        16
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          11.2,
+          13.1
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            13,
+            2,
+            14
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "south": {
+          "uv": [
+            1,
+            5,
+            2,
+            6
+          ],
+          "texture": "#p1_1"
+        },
+        "west": {
+          "uv": [
+            15,
+            2,
+            16,
+            6
+          ],
+          "rotation": 270,
+          "texture": "#p1_1"
+        },
+        "up": {
+          "uv": [
+            2,
+            0,
+            6,
+            1
+          ],
+          "rotation": 90,
+          "texture": "#p1_1"
+        },
+        "down": {
+          "uv": [
+            0,
+            2,
+            1,
+            6
+          ],
+          "rotation": 180,
+          "texture": "#p1_1"
+        }
+      }
+    }
+  ]
+}

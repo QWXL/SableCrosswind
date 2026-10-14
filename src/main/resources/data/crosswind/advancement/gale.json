@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "read_high_speed": {
+      "conditions": {
+        "speed": {
+          "min": 50.0
+        }
+      },
+      "trigger": "crosswind:wind_speed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.crosswind.gale.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crosswind:weather_station"
+    },
+    "title": {
+      "translate": "advancements.crosswind.gale.title"
+    }
+  },
+  "parent": "crosswind:first_instrument",
+  "requirements": [
+    [
+      "read_high_speed"
+    ]
+  ]
+}

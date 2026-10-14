@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "witness": {
+      "trigger": "crosswind:instrument_destroyed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.crosswind.broken_anemometer.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "crosswind:anemometer"
+    },
+    "title": {
+      "translate": "advancements.crosswind.broken_anemometer.title"
+    }
+  },
+  "parent": "crosswind:first_instrument",
+  "requirements": [
+    [
+      "witness"
+    ]
+  ]
+}

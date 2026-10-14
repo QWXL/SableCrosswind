@@ -1,0 +1,246 @@
+{
+  "__comment": "weather_station_base 的静态部分（连接状态 below）。立柱 UV 保持 0..16 的 1:1 映射，连接差异由贴图 pole_* 的像素行复制承担。",
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "0": "create:block/andesite_casing",
+    "pole": "crosswind:block/pole_below",
+    "particle": "crosswind:block/pole_below"
+  },
+  "elements": [
+    {
+      "name": "rod",
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        9,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          0,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            16
+          ],
+          "texture": "#pole"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#pole"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#pole"
+        }
+      }
+    },
+    {
+      "name": "rod",
+      "from": [
+        7,
+        11,
+        7
+      ],
+      "to": [
+        9,
+        15,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          12,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rod",
+      "from": [
+        7,
+        17,
+        7
+      ],
+      "to": [
+        9,
+        19,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          8,
+          18,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "__comment": "气象站参与【下方】立柱连接（PoleInstrumentBlock，掩码 2），所以有 axis × pole_below 六个变体。★ 这些属性名必须与方块实际注册的一致：基类 InstrumentBlock 的掩码是 0，POLE_BELOW/AXIS 根本不会注册，那时写这些变体会【一个都命中不了】、整块变成缺失模型。",
+  "variants": {
+    "axis=y,pole_below=false": { "model": "crosswind:block/weather_station_base_none" },
+    "axis=y,pole_below=true":  { "model": "crosswind:block/weather_station_base_below" },
+    "axis=x,pole_below=false": { "model": "crosswind:block/weather_station_base_none" },
+    "axis=x,pole_below=true":  { "model": "crosswind:block/weather_station_base_below" },
+    "axis=z,pole_below=false": { "model": "crosswind:block/weather_station_base_none" },
+    "axis=z,pole_below=true":  { "model": "crosswind:block/weather_station_base_below" }
+  }
+}
