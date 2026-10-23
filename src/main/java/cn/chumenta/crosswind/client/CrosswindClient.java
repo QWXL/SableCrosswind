@@ -2,6 +2,10 @@ package cn.chumenta.crosswind.client;
 
 import cn.chumenta.crosswind.Crosswind;
 import cn.chumenta.crosswind.network.WindMotionClientHandler;
+import cn.chumenta.crosswind.registry.CrosswindRegistry;
+import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.foundation.item.TooltipModifier;
+import net.createmod.catnip.lang.FontHelper;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -27,5 +31,9 @@ public final class CrosswindClient {
         RotorModels.bootstrap();
 
         WindStreakSpawnerTick.register();
+
+        TooltipModifier.REGISTRY.register(CrosswindRegistry.RAT_ITEM.get(),
+                new ItemDescription.Modifier(CrosswindRegistry.RAT_ITEM.get(),
+                        FontHelper.Palette.STANDARD_CREATE));
     }
 }

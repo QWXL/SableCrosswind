@@ -38,6 +38,9 @@ public final class InstrumentRenderers {
                 Crosswind.id("block/weather_station_anemometer_hub")));
         event.register(RotorModels.standalone(
                 Crosswind.id("block/weather_station_anemometer_arm")));
+
+        event.register(RotorModels.standalone(RotorModels.RAT_FAN_ID));
+        event.register(RotorModels.standalone(Crosswind.id("block/rat_shaft")));
     }
 
     @SubscribeEvent
@@ -46,6 +49,7 @@ public final class InstrumentRenderers {
         event.registerBlockEntityRenderer(CrosswindRegistry.ANEMOMETER_BE.get(), AnemometerRenderer::new);
         event.registerBlockEntityRenderer(CrosswindRegistry.WEATHER_STATION_BE.get(),
                 WeatherStationRenderer::new);
+        event.registerBlockEntityRenderer(CrosswindRegistry.RAT_BE.get(), RatRenderer::new);
     }
 
     public static final class WindVaneRenderer

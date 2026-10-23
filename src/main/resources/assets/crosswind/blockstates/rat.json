@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "crosswind:block/rat"
+    },
+    "facing=east": {
+      "model": "crosswind:block/rat",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "crosswind:block/rat",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "crosswind:block/rat",
+      "y": 270
+    }
+  }
+}

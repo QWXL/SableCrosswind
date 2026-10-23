@@ -72,6 +72,11 @@ public final class CrosswindRegistry {
                             instrumentProps().strength(1.0F, 4.0F),
                             cn.chumenta.crosswind.instrument.InstrumentShapes.ROD));
 
+    public static final DeferredBlock<cn.chumenta.crosswind.rat.RatBlock> RAT =
+            BLOCKS.register("rat",
+                    () -> new cn.chumenta.crosswind.rat.RatBlock(
+                            instrumentProps().strength(2.0F, 6.0F)));
+
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WindInstruments.WindVaneBlockEntity>> WIND_VANE_BE =
             BLOCK_ENTITIES.register("wind_vane",
                     () -> BlockEntityType.Builder.of(WindInstruments.WindVaneBlockEntity::new,
@@ -86,6 +91,12 @@ public final class CrosswindRegistry {
             BLOCK_ENTITIES.register("weather_station",
                     () -> BlockEntityType.Builder.of(WindInstruments.WeatherStationBlockEntity::new,
                             weatherStationBlock()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<cn.chumenta.crosswind.rat.RatBlockEntity>> RAT_BE =
+            BLOCK_ENTITIES.register("rat",
+                    () -> BlockEntityType.Builder.of(
+                            cn.chumenta.crosswind.rat.RatBlockEntity::create,
+                            RAT.get()).build(null));
 
     private static DeferredItem<net.minecraft.world.item.BlockItem> poleItem(
             final String name,
@@ -102,6 +113,9 @@ public final class CrosswindRegistry {
 
     public static final DeferredItem<net.minecraft.world.item.BlockItem> WEATHER_STATION_ITEM =
             ITEMS.registerSimpleBlockItem("weather_station", WEATHER_STATION);
+
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> RAT_ITEM =
+            ITEMS.registerSimpleBlockItem("rat", RAT);
 
     public static final DeferredRegister<net.minecraft.world.item.ArmorMaterial> ARMOR_MATERIALS =
             DeferredRegister.create(net.minecraft.core.registries.Registries.ARMOR_MATERIAL,
@@ -153,6 +167,7 @@ public final class CrosswindRegistry {
                         output.accept(ANEMOMETER_ITEM.get());
                         output.accept(WEATHER_STATION_ITEM.get());
                         output.accept(INSTRUMENT_ROD_ITEM.get());
+                        output.accept(RAT_ITEM.get());
                         output.accept(NON_SLIP_BOOTS_ITEM.get());
                     })
                     .build());

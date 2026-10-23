@@ -32,6 +32,15 @@ public final class RotorModels {
     public static final PartialModel WEATHER_STATION_ANEMOMETER_ARM =
             PartialModel.of(Crosswind.id("block/weather_station_anemometer_arm"));
 
+    public static final net.minecraft.resources.ResourceLocation RAT_FAN_ID =
+            Crosswind.id("block/rat_fan");
+
+    public static final PartialModel RAT_FAN =
+            PartialModel.of(RAT_FAN_ID);
+
+    public static final PartialModel RAT_SHAFT =
+            PartialModel.of(Crosswind.id("block/rat_shaft"));
+
     public static void bootstrap() {
     }
 
